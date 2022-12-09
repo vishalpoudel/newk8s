@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: basic-k8s-demo1
+
+  labels:
+
+    app: demo
+
+spec:
+
+  replicas: 2
+
+  selector:
+
+    matchLabels:
+
+      app: demo
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: demo
+
+    spec:
+
+      containers:
+
+      - name: basic-k8s-demo1
+
+        image: vishalpoudel96/basic-k8s-demo:v1
+
+        ports:
+
+        - containerPort: 6100
